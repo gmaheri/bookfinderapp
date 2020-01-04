@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path')
-
-
+const connectDB = require('./config/db');
 
 //load env var
 dotenv.config({path : './config/config.env'});
+
+//connect to DB
+connectDB();
 
 //intialise express
 const app = express();

@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const {getBooks, addBook} = require('../contollers/controller')
 
-router.get('/', (req, res) => {
-  return res.status(200).json({
-    success : true,
-    data : req.body,
-    msg : 'GET'
-  })
-});
+router
+.route('/')
+.get(getBooks)
+.post(addBook);
 
 router.post('/', (req, res) => {
   return res.status(200).json({
