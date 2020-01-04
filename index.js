@@ -23,6 +23,9 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT;
 
 app.use('/api/books',require('./routes/routes'));
+app.use('/api/books/:id',require('./routes/routes'));
+
+
 
 app.listen(PORT || 3200,() => {
   console.log(`Server is up and running in ${process.env.NODE_ENV} mode on port: ${PORT}`)
